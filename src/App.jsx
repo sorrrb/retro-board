@@ -1,9 +1,12 @@
 import './App.css';
+import Icon from './components/Icon/Icon';
 
 function App() {
 
   return (
-    <p>Reset Project Structure</p>
+    <div>
+      <Icon name={"logo"} descriptor="CanCodes Retro Logo" size={64} />
+    </div>
   )
 }
 
