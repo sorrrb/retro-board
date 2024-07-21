@@ -16,6 +16,7 @@ const iconPathsCDN = {
   timer: "timer--v1"
 }
 
+// Helper func used to format (and return) a given set of valid, passed component props
 const getPathURL = (name, variant, style, size, fillColor, hasCustomColor) => {
   let pathURL;
   const hasMultipleIconStyles = (variant !== null); // Checks to see if prop value is type array [multiple icon variants] or type string [one icon variant]
