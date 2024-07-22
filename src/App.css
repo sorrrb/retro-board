@@ -9,6 +9,7 @@
   --light-font: #c3c4c6;
   --logo-main: #2196f3;
   --logo-side: #1565c0;
+  --display-bg: #EAEAEA;
 }
 
 body {
@@ -18,4 +19,5 @@ body {
 
 button {
   cursor: pointer;
+  font-family: inherit;
 }
