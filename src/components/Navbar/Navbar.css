@@ -1,12 +1,14 @@
 nav,
 .logo,
-.navbar--controls {
+.navbar--controls,
+.navbar--btn {
   display: flex;
   align-items: center;
 }
 
 nav {
   --color-border: #52667220;
+  --logo-font-text: #75b3f0;
 
   justify-content: space-between;
   padding: 0.5rem 1rem;
@@ -14,34 +16,68 @@ nav {
 }
 
 .logo {
+  user-select: none;
+
   & h1.logo--text {
     font-family: "Asap Condensed", sans-serif;
     font-weight: 500;
     font-size: 1.75rem;
 
-    & span {
+    & span:first-child {
+      color: var(--logo-font-text);
+    }
+
+    & span:last-child {
       font-weight: 700;
     }
   }
 }
 
 .active-board--title {
+  font-family: "Asap";
   font-size: 2rem;
+  font-weight: 600;
 }
 
 .navbar--controls {
-  gap: 1rem;
+  justify-content: center;
+  min-width: 175px;
 
   .navbar--btn {
+    --btn-icon-size: 24px;
+    --button-font-dark-active: #3a3b3c;
+    --button-font-dark-inactive: #57595b;
+    --button-decorator: #7a75bc;
+    --color-normal: #52667250;
+    --color-hover: #52667225;
+
+    color: var(--button-font-dark-inactive);
+    font-family: "Asap Condensed", sans-serif;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.375rem;
     background: none;
     border: none;
+    outline: none;
     filter: saturate(10%);
-    border-radius: 50%;
-    padding: 0.5rem;
+    border-radius: 0.25rem;
+
+    & p {
+      font-weight: 600;
+      text-align: center;
+      inline-size: 50px;
+    }
+
+    & span {
+      min-width: 50px;
+      font-weight: 900;
+    }
   }
 
   .navbar--btn:hover {
-    background-color: var(--color-border);
+    background-color: var(--color-hover);
+    outline: 1px solid var(--color-normal);
+    color: var(--button-font-dark-active);
     filter: none;
   }
 }
