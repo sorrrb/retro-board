@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-font: #3a3b3c;
+  --light-font: #c3c4c6;
+  --logo-main: #2196f3;
+  --logo-side: #1565c0;
+}
+
 body {
-  font-family: "Asap Condensed", sans-serif;
+  font-family: "Asap", sans-serif;
+  color: var(--dark-font);
+}
+
+button {
+  cursor: pointer;
 }
