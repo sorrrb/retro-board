@@ -27,13 +27,14 @@ const getPathURL = (name, variant, style, size, fillColor, hasCustomColor) => {
   return pathURL;
 }
 
-function Icon({ name, variant = null, descriptor, style = 'color', size, fillColor = 'default' }) {
+function Icon({ name, classList, variant = null, descriptor, style = 'color', size = 24, fillColor = 'default' }) {
   const baseURL = 'https://img.icons8.com/';
   const hasCustomColor = (fillColor !== 'default');
   const srcURL = baseURL + getPathURL(name, variant, style, size, fillColor, hasCustomColor);
 
   return (
     <img
+      className={classList}
       src={srcURL}
       alt={descriptor}
       height={size}
@@ -44,6 +45,7 @@ function Icon({ name, variant = null, descriptor, style = 'color', size, fillCol
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
+  classList: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   variant: PropTypes.number,
   descriptor: PropTypes.string,
   style: PropTypes.string,
