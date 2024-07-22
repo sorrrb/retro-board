@@ -1,17 +1,127 @@
+/* Stylesheet reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --dark-font: #3a3b3c;
-  --light-font: #c3c4c6;
-  --logo-main: #2196f3;
-  --logo-side: #1565c0;
-  --display-bg: #EAEAEA;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
+
+
+/* Universal variable declarations */
+/* (Acts as a holistic reference to project's CSS variables) */
+:root {
+  --base-size: 1rem;
+  --xxs: calc(0.25 * var(--base-size));
+  --xs: calc(0.5 * var(--base-size));
+  --sm: calc(0.75 * var(--base-size));
+  --med: calc(1 * var(--base-size));
+  --lg: calc(1.5 * var(--base-size));
+  --xl: calc(1.75 * var(--base-size));
+  --xxl: calc(2 * var(--base-size));
+
+  --logo-main: #2196f3;
+  --logo-side: #1565c0;
+
+  --dark-font: #3a3b3c;
+  --light-font: #c3c4c6;
+  --body-bg-dark: #292929;
+  --body-bg-light: #EAEAEA;
+  --element-bg-dark: #242124;
+  --element-bg-light: hsl(300, 4%, 86%);
+}
+
+
+
+/* Elements */
 body {
   font-family: "Asap", sans-serif;
   color: var(--dark-font);
@@ -20,4 +130,150 @@ body {
 button {
   cursor: pointer;
   font-family: inherit;
+}
+
+
+
+/* Theme */
+.theme--dark {
+  background-color: var(--element-bg-dark);
+  color: var(--light-font);
+}
+
+.theme--light {
+  background-color: var(--element-bg-light);
+  color: var(--dark-font);
+}
+
+
+
+/* Project Root */
+#root {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root:has(nav.theme--dark) {
+  background-color: var(--body-bg-dark);
+}
+
+#root:has(nav.theme--light) {
+  background-color: var(--body-bg-light);
+}
+
+
+
+/* Utility classes */
+/* Display */
+/* [Flex] */
+.flex {
+  display: flex;
+}
+
+.flex.row {
+  flex-direction: row;
+}
+
+.flex.col {
+  flex-direction: column;
+}
+
+.flex.align-center {
+  align-items: center;
+}
+
+.flex.justify-center {
+  justify-content: center;
+}
+
+.flex.place-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* [Grid] */
+.grid {
+  display: grid;
+}
+
+.grid.place-center {
+  place-items: center;
+}
+
+
+
+/* Spacing */
+/* [Padding] */
+.padding-xs {
+  padding: var(--xs);
+}
+
+.padding-sm {
+  padding: var(--sm);
+}
+
+.padding-med {
+  padding: var(--med);
+}
+
+.padding-lg {
+  padding: var(--lg);
+}
+
+.padding-xl {
+  padding: var(--xl);
+}
+
+/* [Margin] */
+.margin-xs {
+  margin: var(--xs);
+}
+
+.margin-sm {
+  margin: var(--sm);
+}
+
+.margin-med {
+  margin: var(--med);
+}
+
+.margin-lg {
+  margin: var(--lg);
+}
+
+.margin-xl {
+  margin: var(--xl);
+}
+
+
+
+/* Font */
+/* [Size] */
+.font-xxs {
+  font-size: var(--xxs);
+}
+
+.font-xs {
+  font-size: var(--xs);
+}
+
+.font-sm {
+  font-size: var(--sm);
+}
+
+.font-med {
+  font-size: var(--med);
+}
+
+.font-lg {
+  font-size: var(--lg);
+}
+
+.font-xl {
+  font-size: var(--xl);
+}
+
+.font-xxl {
+  font-size: var(--xxl);
 }
