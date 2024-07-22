@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import PropTypes from 'prop-types';
 import { ThemeContext } from "../../Contexts";
+import './Navbar.css';
 import Icon from "../Icon/Icon";
-import './Navbar.css'
+import IconButton from "../Buttons/IconButton/IconButton";
 
 const capitalizeStr = str => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -14,23 +15,15 @@ function Navbar({ toggleTheme }) {
       <div className="logo">
         <Icon name={"logo"} descriptor="CanCodes Retro Logo" size={48} />
         <h1 className="logo--text">
-          CanCodes
+          <span>CanCodes</span>
           <span>Retro</span>
         </h1>
       </div>
       <h1 className="active-board--title">Retro Board</h1>
       <div className="navbar--controls">
-        <button className="navbar--btn">
-          <Icon name={"timer"} size={24} />
-        </button>
-        <button className="navbar--btn">
-          <Icon name={"teamMembers"} size={24} />
-        </button>
-        <button
-          className={`navbar--btn btn-${theme}`}
-          onClick={toggleTheme}>
-          <Icon name={`theme${capitalizeStr(theme)}`} size={24} />
-        </button>
+        <IconButton btnClass={"navbar--btn"} subtext={"Timer"} iconName={"timer"} iconSize={32} />
+        <IconButton btnClass={"navbar--btn"} subtext={"Team"} iconName={"teamMembers"} iconSize={32} />
+        <IconButton btnClass={"navbar--btn"} subtext={"Theme"} iconName={`theme${capitalizeStr(theme)}`} iconSize={32} onClick={toggleTheme} />
       </div>
     </nav>
   )
