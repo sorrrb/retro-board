@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import './App.css';
-import Icon from './components/Icon/Icon';
+import { ThemeContext } from './Contexts';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   return (
-    <div>
-      <Icon name={"logo"} descriptor="CanCodes Retro Logo" size={64} />
-    </div>
+    <ThemeContext.Provider value={theme}>
+      <Navbar toggleTheme={toggleTheme} />
+    </ThemeContext.Provider>
   )
 }
 
