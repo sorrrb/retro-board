@@ -1,28 +1,6 @@
 /* Component parent */
 nav.navbar {
-  --base-size: 1rem;
-  --xxs: calc(0.25 * var(--base-size));
-  --xs: calc(0.5 * var(--base-size));
-  --sm: calc(0.75 * var(--base-size));
-  --med: calc(1 * var(--base-size));
-  --lg: calc(1.5 * var(--base-size));
-  --xl: calc(1.75 * var(--base-size));
-  --xxl: calc(2 * var(--base-size));
-
-  --element-bg-dark: #242124;
-  --element-bg-light: #dddadd;
-  --neutral-default: #80808080;
-  --btn-bg-dark: #ffffff80;
-  --btn-bg-light: #00000080;
-  --btn-theme-bg-dark: #8f8f3d80;
-  --btn-theme-bg-light: #293d3d80;
-  --separator-dark: #00000080;
-  --separator-light: #ffffff80;
-
-  --logo-font-color: #75b3f0;
-
   justify-content: space-between;
-  border-bottom: 1px solid var(--neutral-default);
 }
 
 
@@ -32,14 +10,10 @@ nav.navbar {
 /* Dark & Light */
 .navbar.theme--dark,
 .navbar.theme--light {
-  & button {
-    background: none;
-    border: none;
-  }
-
   & .logo--container {
-    padding-inline-start: var(--xxl);
+    gap: var(--xxs);
     font-family: "Asap Condensed", sans-serif;
+    user-select: none;
 
     & span:first-child {
       font-weight: 400;
@@ -63,7 +37,7 @@ nav.navbar {
 
     & .navbar--control-btns>.btn--icon {
       padding: var(--sm) var(--lg);
-      filter: saturate(10%);
+      filter: saturate(0%) grayscale(50%);
     }
 
     & .navbar--control-btns>.btn--icon:hover {
@@ -71,14 +45,12 @@ nav.navbar {
     }
   }
 
-  & .btn--icon {
-    padding: var(--sm) var(--lg);
+  & .navbar--theme-btn>.btn--icon:hover {
+    background-color: var(--logo-transparent);
   }
 
-  & .separator {
-    height: inherit;
-    width: 2px;
-    background-color: var(--neutral-default);
+  & .btn--icon {
+    padding: var(--sm) var(--lg);
   }
 }
 
@@ -86,9 +58,7 @@ nav.navbar {
 
 /* Dark only */
 .navbar.theme--dark {
-  & .board--title {
-    color: white;
-  }
+  color: white;
 
   & .separator {
     outline-color: var(--separator-light);
@@ -97,10 +67,6 @@ nav.navbar {
 
   & .navbar--control-btns>.btn--icon:hover {
     background-color: var(--btn-bg-dark);
-  }
-
-  & .navbar--theme-btn>.btn--icon:hover {
-    background-color: var(--btn-theme-bg-dark);
   }
 }
 
@@ -118,9 +84,5 @@ nav.navbar {
 
   & .navbar--control-btns>.btn--icon:hover {
     background-color: var(--btn-bg-light);
-  }
-
-  & .navbar--theme-btn>.btn--icon:hover {
-    background-color: var(--btn-theme-bg-light);
   }
 }

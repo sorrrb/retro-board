@@ -1,0 +1,31 @@
+nav.navbar,
+div.toolbar {
+  --element-bg-dark: #242124;
+  --element-bg-light: #dddadd;
+  --btn-bg-dark: #ffffff80;
+  --btn-bg-light: #00000080;
+  --btn-theme-bg-dark: #8f8f3d80;
+  --btn-theme-bg-light: #293d3d80;
+  --separator-dark: #00000080;
+  --separator-light: #ffffff80;
+
+  --logo-font-color: #75b3f0;
+
+  border-bottom: 1px solid var(--neutral-med-opacity);
+}
+
+nav.navbar.theme--dark,
+nav.navbar.theme--light,
+div.toolbar.theme--dark,
+div.toolbar.theme--light {
+  & button {
+    background: none;
+    border: none;
+  }
+
+  & .separator {
+    height: inherit;
+    width: 2px;
+    background-color: var(--neutral-low-opacity);
+  }
+}

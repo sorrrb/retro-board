@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import PropTypes from 'prop-types';
-import { ThemeContext } from "../../Contexts";
+import { ThemeContext } from "../../../Contexts";
+import '../ControlBars.css';
 import './Navbar.css';
-import Icon from "../Icon/Icon";
-import IconButton from "../Buttons/IconButton/IconButton";
+import Icon from "../../Icon/Icon";
+import IconButton from "../../Buttons/IconButton/IconButton";
 
 const capitalizeStr = str => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -25,11 +26,13 @@ function Navbar({ toggleTheme }) {
           <IconButton
             imgClassList={'timer-icon'}
             iconName={"timer"}
+            iconTitle={"Sprint Timer"}
             iconSize={32} />
           <div className="separator"></div>
           <IconButton
             imgClassList={'members-icon'}
             iconName={"teamMembers"}
+            iconTitle={"Sprint Members"}
             iconSize={32} />
         </div>
         <div className="separator"></div>
@@ -37,6 +40,7 @@ function Navbar({ toggleTheme }) {
           <IconButton
             imgClassList={'theme-icon'}
             iconName={`theme${capitalizeStr(theme)}`}
+            iconTitle={`${theme === "light" ? "Dark" : "Light"} Mode`}
             iconSize={32}
             onClick={toggleTheme} />
         </div>
