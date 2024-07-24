@@ -1,15 +1,15 @@
-import { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import { ThemeContext } from '../../../Contexts';
-import '../ControlBars.css';
-import './Toolbar.css';
+import { useContext, useState } from "react";
+import PropTypes from "prop-types";
+import { ThemeContext } from "../../../Contexts";
+import "../ControlBars.css";
+import "./Toolbar.css";
 import IconButton from "../../Buttons/IconButton/IconButton";
 
-function Toolbar() {
+function Toolbar({ activeNavTab }) {
   const theme = useContext(ThemeContext);
   const [visibility, setVisibility] = useState(true);
-  const [layoutDirection, setLayoutDirection] = useState('vertical');
-  const [itemSearch, setItemSearch] = useState('');
+  const [layoutDirection, setLayoutDirection] = useState("vertical");
+  const [itemSearch, setItemSearch] = useState("");
 
   return (
     <div className={`toolbar theme--${theme} flex align-center`}>
@@ -45,7 +45,7 @@ function Toolbar() {
             btnClassList={`flex place-center padding-xxxs ${layoutDirection === "vertical" ? "active-layout" : ""}`}
             imgClassList={"vertical-layout-icon"}
             iconFill={"FFFFFF"}
-            iconName={`layoutVertical`}
+            iconName={"layoutVertical"}
             iconTitle={"Set layout: Vertical"}
             iconStyle={"ios-filled"}
             iconSize={16}
@@ -55,7 +55,7 @@ function Toolbar() {
             btnClassList={`flex place-center padding-xxxs ${layoutDirection === "horizontal" ? "active-layout" : ""}`}
             imgClassList={"horizontal-layout-icon"}
             iconFill={"FFFFFF"}
-            iconName={`layoutHorizontal`}
+            iconName={"layoutHorizontal"}
             iconTitle={"Set layout: Horizontal"}
             iconStyle={"ios-filled"}
             iconSize={16}
@@ -65,13 +65,14 @@ function Toolbar() {
         <div className="separator"></div>
       </div>
       <div className="toolbar--nav-menu grid">
+        {activeNavTab === 0 ? `Module ` : `${activeNavTab === 1 ? "Timer Controls Placeholder" : "Members Controls Placeholder"}`}
       </div>
     </div>
   )
 }
 
 Toolbar.propTypes = {
-
+  activeNavTab: PropTypes.number.isRequired
 }
 
 export default Toolbar;

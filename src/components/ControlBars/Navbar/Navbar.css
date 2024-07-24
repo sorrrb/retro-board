@@ -40,7 +40,8 @@ nav.navbar {
       filter: saturate(0%) grayscale(50%);
     }
 
-    & .navbar--control-btns>.btn--icon:hover {
+    & .navbar--control-btns>.btn--icon:hover,
+    & .navbar--control-btns>.active-tab {
       filter: none;
     }
   }
@@ -65,7 +66,8 @@ nav.navbar {
   }
 
 
-  & .navbar--control-btns>.btn--icon:hover {
+  & .navbar--control-btns>.btn--icon:hover,
+  .navbar--control-btns>.active-tab {
     background-color: var(--btn-bg-dark);
   }
 }
@@ -82,7 +84,8 @@ nav.navbar {
     outline-color: var(--separator-dark);
   }
 
-  & .navbar--control-btns>.btn--icon:hover {
+  & .navbar--control-btns>.btn--icon:hover,
+  & .navbar--control-btns>.active-tab {
     background-color: var(--btn-bg-light);
   }
 }

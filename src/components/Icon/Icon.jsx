@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // Helper obj used to access CDN -- [key, value] corresponds with key representing a functional icon identifier and value representing a str (or array of strings) of filenames on the CDN
 const iconPathsCDN = {
@@ -26,6 +26,7 @@ const iconPathsCDN = {
 
   // iOS Glyphs styled icons
   "ios-glyphs": {
+    close: "delete-sign",
     visibilityHidden: "invisible",
     visibilityShown: "visible--v1"
   }
@@ -43,9 +44,9 @@ const getPathURL = (name, variant, style, size, fillColor, hasCustomColor) => {
   return pathURL;
 }
 
-function Icon({ name, classList, variant = null, descriptor, style = 'color', size = 24, fillColor = 'default' }) {
-  const baseURL = 'https://img.icons8.com/';
-  const hasCustomColor = (fillColor !== 'default');
+function Icon({ name, classList, variant = null, descriptor, style = "color", size = 24, fillColor = "default" }) {
+  const baseURL = "https://img.icons8.com/";
+  const hasCustomColor = (fillColor !== "default");
   const srcURL = baseURL + getPathURL(name, variant, style, size, fillColor, hasCustomColor);
 
   return (
@@ -66,7 +67,7 @@ Icon.propTypes = {
   descriptor: PropTypes.string,
   style: PropTypes.string,
   size: PropTypes.number,
-  fillColor: PropTypes.string
+  fillColor: PropTypes.string,
 }
 
 export default Icon;

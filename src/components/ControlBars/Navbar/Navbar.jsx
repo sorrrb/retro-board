@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { ThemeContext } from "../../../Contexts";
-import '../ControlBars.css';
-import './Navbar.css';
+import "../ControlBars.css";
+import "./Navbar.css";
 import Icon from "../../Icon/Icon";
 import IconButton from "../../Buttons/IconButton/IconButton";
 
 const capitalizeStr = str => str.charAt(0).toUpperCase() + str.slice(1);
 
-function Navbar({ toggleTheme }) {
+function Navbar({ activeTab, toggleTheme, toggleActiveTab }) {
   const theme = useContext(ThemeContext);
 
   return (
@@ -24,21 +24,27 @@ function Navbar({ toggleTheme }) {
       <div className="navbar--btns flex place-center">
         <div className="navbar--control-btns flex place-center">
           <IconButton
-            imgClassList={'timer-icon'}
+            btnClassList={`${activeTab === 1 ? "active-tab" : ""} active-index--1`}
+            imgClassList={"timer-icon"}
             iconName={"timer"}
             iconTitle={"Sprint Timer"}
-            iconSize={32} />
+            iconSize={32}
+            onClick={toggleActiveTab}
+            tabData={{ index: 1, isActive: (activeTab === 1) }} />
           <div className="separator"></div>
           <IconButton
-            imgClassList={'members-icon'}
+            btnClassList={`${activeTab === 2 ? "active-tab" : ""} active-index--2`}
+            imgClassList={"members-icon"}
             iconName={"teamMembers"}
             iconTitle={"Sprint Members"}
-            iconSize={32} />
+            iconSize={32}
+            onClick={toggleActiveTab}
+            tabData={{ index: 2, isActive: (activeTab === 2) }} />
         </div>
         <div className="separator"></div>
         <div className="navbar--theme-btn">
           <IconButton
-            imgClassList={'theme-icon'}
+            imgClassList={"theme-icon"}
             iconName={`theme${capitalizeStr(theme)}`}
             iconTitle={`${theme === "light" ? "Dark" : "Light"} Mode`}
             iconSize={32}
@@ -50,7 +56,9 @@ function Navbar({ toggleTheme }) {
 }
 
 Navbar.propTypes = {
-  toggleTheme: PropTypes.func
+  activeTab: PropTypes.number.isRequired,
+  toggleTheme: PropTypes.func,
+  toggleActiveTab: PropTypes.func
 }
 
 export default Navbar;

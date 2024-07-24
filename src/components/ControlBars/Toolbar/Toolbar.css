@@ -1,5 +1,8 @@
 /* Component parent */
-div.toolbar {}
+div.toolbar {
+  font-weight: 500;
+  text-align: center;
+}
 
 /* Component child/children */
 /* Theme styles */

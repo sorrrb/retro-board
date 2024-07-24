@@ -8,7 +8,6 @@ div.toolbar {
   --btn-theme-bg-light: #293d3d80;
   --separator-dark: #00000080;
   --separator-light: #ffffff80;
-
   --logo-font-color: #75b3f0;
 
   border-bottom: 1px solid var(--neutral-med-opacity);

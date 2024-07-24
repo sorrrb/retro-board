@@ -1,0 +1,24 @@
+div.timer {
+  position: absolute;
+  bottom: var(--lg);
+  left: 42.5%;
+  /* 45% <-> 55% */
+  width: 15%;
+  border: 1px solid var(--neutral-gray);
+  border-radius: var(--xl);
+  font-weight: 300;
+  padding-inline: var(--xxxl);
+}
+
+.btn--timer-close {
+  visibility: hidden;
+  position: absolute;
+  top: var(--sm);
+  right: var(--sm);
+  border: none;
+  background: none;
+}
+
+div.timer:hover>.btn--timer-close {
+  visibility: visible;
+}
