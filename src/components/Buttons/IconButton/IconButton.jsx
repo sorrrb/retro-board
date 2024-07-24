@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Icon from '../../Icon/Icon';
 
-function IconButton({ btnClassList, imgClassList, subtext = null, iconName, iconVariant = null, iconAlt, iconStyle = 'color', iconSize, iconFill = 'default', onClick }) {
+function IconButton({ btnClassList, imgClassList, subtext = null, iconName, iconVariant = null, iconTitle, iconStyle = 'color', iconSize, iconFill = 'default', onClick }) {
   const containsSubtext = (subtext !== null);
   const genericBtnClass = 'btn--icon';
 
@@ -27,7 +27,7 @@ function IconButton({ btnClassList, imgClassList, subtext = null, iconName, icon
         name={iconName}
         classList={formatClasses(imgClassList, 'file--icon')}
         variant={iconVariant}
-        descriptor={iconAlt}
+        descriptor={iconTitle}
         style={iconStyle}
         size={iconSize}
         fillColor={iconFill}
@@ -46,7 +46,7 @@ IconButton.propTypes = {
   subtext: PropTypes.string,
   iconName: PropTypes.string.isRequired,
   iconVariant: PropTypes.number,
-  iconAlt: PropTypes.string,
+  iconTitle: PropTypes.string,
   iconStyle: PropTypes.string,
   iconSize: PropTypes.number,
   iconFill: PropTypes.string,
