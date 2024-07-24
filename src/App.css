@@ -100,6 +100,7 @@ video {
 /* (Acts as a holistic reference to project's CSS variables) */
 :root {
   --base-size: 1rem;
+  --xxxs: calc(0.125 * var(--base-size));
   --xxs: calc(0.25 * var(--base-size));
   --xs: calc(0.5 * var(--base-size));
   --sm: calc(0.75 * var(--base-size));
@@ -110,6 +111,9 @@ video {
 
   --logo-main: #2196f3;
   --logo-side: #1565c0;
+  --logo-bright: #60b1f3;
+  --logo-dull: #4077a3;
+  --logo-transparent: #2196f360;
 
   --dark-font: #3a3b3c;
   --light-font: #c3c4c6;
@@ -117,6 +121,12 @@ video {
   --body-bg-light: #EAEAEA;
   --element-bg-dark: #242124;
   --element-bg-light: #dddadd;
+  --neutral-dark-gray: #666666;
+  --neutral-light-gray: #999999;
+  --neutral-gray: #808080;
+  --neutral-low-opacity: #80808040;
+  --neutral-med-opacity: #80808080;
+  --neutral-high-opacity: #808080b0;
 }
 
 
@@ -205,6 +215,14 @@ button {
 
 /* Spacing */
 /* [Padding] */
+.padding-xxxs {
+  padding: var(--xxxs);
+}
+
+.padding-xxs {
+  padding: var(--xxs);
+}
+
 .padding-xs {
   padding: var(--xs);
 }
@@ -226,6 +244,14 @@ button {
 }
 
 /* [Margin] */
+.margin-xxxs {
+  margin: var(--xxs);
+}
+
+.margin-xxs {
+  margin: var(--xxs);
+}
+
 .margin-xs {
   margin: var(--xs);
 }
